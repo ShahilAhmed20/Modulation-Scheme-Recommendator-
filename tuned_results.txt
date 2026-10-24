@@ -1,0 +1,51 @@
+MODULATION SCHEME CLASSIFIER - FINE-TUNED RESULTS
+Best model: HistGradientBoostingClassifier (selected by macro-F1 on test set)
+Config: HistGradientBoosting
+============================================================
+
+All candidate models (test set):
+  XGBoost 300/8/0.1 (baseline, as original)                        acc=0.8510  prec=0.8517  rec=0.8504  f1=0.8499
+  Tuned XGBoost d=6 lr=0.1 (1500 max, subs=1.0)                    acc=0.8598  prec=0.8663  rec=0.8593  f1=0.8570
+  Tuned XGBoost d=8 lr=0.05 (1500 max, subs=0.9)                   acc=0.8566  prec=0.8613  rec=0.8561  f1=0.8543
+  Tuned XGBoost d=10 lr=0.05 (1500 max, subs=0.9)                  acc=0.8575  prec=0.8609  rec=0.8570  f1=0.8558
+  Tuned XGBoost d=12 lr=0.03 (2000 max, subs=0.9)                  acc=0.8549  prec=0.8577  rec=0.8544  f1=0.8534
+  RandomForest 400 trees                                           acc=0.8565  prec=0.8591  rec=0.8560  f1=0.8551
+  HistGradientBoosting                                             acc=0.8593  prec=0.8634  rec=0.8588  f1=0.8575
+
+============================================================
+
+BEST MODEL METRICS
+Accuracy (macro)      : 0.8593
+Precision (macro)     : 0.8634
+Recall    (macro)     : 0.8588
+F1 Score  (macro)     : 0.8575
+F1 Score  (weighted)  : 0.8582
+
+Confusion Matrix (counts):
+[[2150   19  373    0  414]
+ [   6 2846  164    0    0]
+ [ 289  343 2329    0   23]
+ [   1    0    0 2723  351]
+ [  51    0   11   66 2841]]
+
+Confusion Matrix (normalized):
+[[7.2733e-01 6.4276e-03 1.2618e-01 0.0000e+00 1.4005e-01]
+ [1.9894e-03 9.4363e-01 5.4377e-02 0.0000e+00 0.0000e+00]
+ [9.6850e-02 1.1495e-01 7.8050e-01 0.0000e+00 7.7078e-03]
+ [3.2520e-04 0.0000e+00 0.0000e+00 8.8553e-01 1.1415e-01]
+ [1.7178e-02 0.0000e+00 3.7050e-03 2.2230e-02 9.5689e-01]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       16QAM     0.8610    0.7273    0.7886      2956
+      256QAM     0.8872    0.9436    0.9145      3016
+       64QAM     0.8095    0.7805    0.7947      2984
+        BPSK     0.9763    0.8855    0.9287      3075
+        QPSK     0.7829    0.9569    0.8612      2969
+
+    accuracy                         0.8593     15000
+   macro avg     0.8634    0.8588    0.8575     15000
+weighted avg     0.8642    0.8593    0.8582     15000
+
+Model saved to: modulation_model_tuned.pkl
